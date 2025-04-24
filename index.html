@@ -1,0 +1,130 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriela Haas | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white flex flex-col min-h-screen">
+    <div id="header"></div>
+    <!-- Hero Section -->
+    <main class="fade-in flex-grow flex flex-col mx-auto p-6 items-center text-center space-y-6">
+
+        <img src="https://placehold.co/128x128?text=GH" alt="Gabriela Haas headshot" class="w-32 h-32 rounded-full shadow-lg object-cover">
+        <div>
+            <h2 class="text-3xl font-bold mb-2">Hi, I'm Gabriela 👋</h2>
+            <p class="text-gray-500 text-lg">
+                I'm a developer and researcher focused on UX, automation, and data-driven problem solving. Welcome to my portfolio.
+            </p>
+        </div>
+        <div class="space-x-4 pt-4">
+            <a href="projects.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                View Projects
+            </a>
+            <a href="contact.html" class="text-blue-600 underline hover:text-blue-800">
+                Get in Touch
+            </a>
+        </div>
+    </main>
+
+    <div id="poochie-wrapper">
+        <img src="images/poochie-idle.png" alt="Poochie" id="poochie" />
+        <!--div class="eye left-eye"><div class="pupil"></div></div-->
+        <div class="eye right-eye"><div class="pupil"></div></div>
+      </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 pb-6">
+        © 2025 Gabriela Haas. Built with ❤️ and Tailwind CSS.
+    </footer>
+    
+    <script>
+        // Load header
+        fetch("header.html")
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById("header").innerHTML = data;
+    
+            // Now that header is loaded, handle dark mode
+            const toggleBtn = document.getElementById('toggle-dark');
+            const root = document.documentElement;
+    
+            // Set initial theme from localStorage
+            if (localStorage.getItem('theme') === 'dark') {
+                root.classList.add('dark');
+            }
+    
+            // Toggle button logic
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    root.classList.toggle('dark');
+                    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+                });
+            }
+          });
+    </script>
+
+<script>
+    const poochie = document.querySelector('.poochie');
+  
+    window.addEventListener('beforeunload', () => {
+      if (poochie) {
+        poochie.style.animation = 'runAway 1s forwards';
+      }
+    });
+  </script>
+
+<script>
+    document.addEventListener('mousemove', (event) => {
+      const eyes = document.querySelectorAll('.eye');
+      eyes.forEach((eye) => {
+        const pupil = eye.querySelector('.pupil');
+        const rect = eye.getBoundingClientRect();
+        const eyeCenterX = rect.left + rect.width / 2;
+        const eyeCenterY = rect.top + rect.height / 2;
+  
+        const deltaX = event.clientX - eyeCenterX;
+        const deltaY = event.clientY - eyeCenterY;
+  
+        const angle = Math.atan2(deltaY, deltaX);
+        const radiusY = 1.75; // Maximum vertical movement
+        const radiusX = 1.5; // Minimal horizontal movement
+  
+        const x = radiusX * Math.cos(angle);
+        const y = radiusY * Math.sin(angle);
+  
+        pupil.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+  </script>
+  
+  
+  
+  <style>
+  @keyframes runAway {
+    to {
+      transform: translateX(100vw) rotate(15deg);
+      opacity: 0;
+    }
+  }
+  </style>
+  
+    
+</body>
+</html>

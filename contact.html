@@ -1,0 +1,92 @@
+<!-- contact.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+    </script>
+      
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Gabriela Haas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        darkMode: 'class',
+    };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white flex flex-col min-h-screen">
+<div id="header"></div>
+  <!-- Main Content -->
+  <main class="flex-grow max-w-3xl mx-auto p-6 flex flex-col items-center text-center space-y-6 fade-in">
+    <h2 class="text-3xl font-bold">Get in Touch</h2>
+    <p class="text-lg text-gray-500">I'd love to hear from you! Reach out anytime via email or connect with me on LinkedIn.</p>
+
+    <div class="space-y-4 text-left w-full max-w-md">
+        <!-- Email Button -->
+        <a href="mailto:gabriela.haas48@gmail.com" target="_blank"
+           class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/60 to-blue-600/60 text-white rounded-lg border border-white/20 shadow backdrop-blur-md hover:from-blue-500/80 hover:to-blue-600/80 transition">
+          <i class="fa-solid fa-envelope"></i> gabriela.haas48@gmail.com
+        </a>
+      
+        <!-- GitHub Button -->
+        <a href="https://github.com/haasg1" target="_blank"
+           class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-700/60 to-gray-900/60 text-white rounded-lg border border-white/20 shadow backdrop-blur-md hover:from-gray-700/80 hover:to-gray-900/80 transition">
+          <i class="fa-brands fa-github"></i> haasg1 on GitHub
+        </a>
+      
+        <!-- LinkedIn Button -->
+        <a href="https://www.linkedin.com/in/gabrielachaas/" target="_blank"
+           class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-400/60 to-blue-700/60 text-white rounded-lg border border-white/20 shadow backdrop-blur-md hover:from-blue-400/80 hover:to-blue-700/80 transition">
+          <i class="fa-brands fa-linkedin"></i> Gabriela Haas - LinkedIn
+        </a>
+      </div>
+      
+      
+      
+  </main>
+
+  
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 pb-6">
+    © 2025 Gabriela Haas. Built with ❤️ and Tailwind CSS.
+  </footer>
+
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        // Now that header is loaded, handle dark mode
+        const toggleBtn = document.getElementById('toggle-dark');
+        const root = document.documentElement;
+
+        // Set initial theme from localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            root.classList.add('dark');
+        }
+
+        // Toggle button logic
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                root.classList.toggle('dark');
+                localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+            });
+        }
+      });
+</script>
+</body>
+</html>

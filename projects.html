@@ -1,0 +1,126 @@
+<!-- projects.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      </script>
+      
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Gabriela Haas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white flex flex-col min-h-screen">
+    <div id="header"></div>
+    <main class="fade-in max-w-3xl mx-auto p-6 pb-20">
+
+        <h2 class="text-2xl font-bold mb-4">Projects</h2>
+        <div class="space-y-8">
+            <div class="bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg shadow-md hover:shadow-lg transition">
+                <img src="images/IFCU.jpg" alt="IFCU project thumbnail" class="w-full h-[320px] object-cover transition-transform duration-300 hover:scale-105">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">International Federation of Catholic Universities Website</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Built a website dedicated to Seton Hall University's affiliation with International Federation of Catholic Universities.</p>
+                    <a href="https://library.shu.edu/IFCU/home" class="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" target="_blank">View project</a>
+                </div>
+            </div>
+    
+            <div class="bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg shadow-md hover:shadow-lg transition">
+                <img src="images/walsh.jpg" alt="Walsh Library thumbnail" class="w-full h-[320px] object-cover transition-transform duration-300 hover:scale-105">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Walsh Library Homepage</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Maintain and improve the Walsh Library homepage, including updates to the tabbed search interface and enhancements to the search box functionality for better user experience.</p>
+                    <a href="https://library.shu.edu/home" target="_blank" class="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View project</a>
+                </div>
+            </div>
+    
+            <div class="bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg shadow-md hover:shadow-lg transition">
+                <img src="images/ihs.jpg" alt="IHS Library thumbnail" class="w-full h-[320px] object-cover transition-transform duration-300 hover:scale-105">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">The Interprofessional Health Sciences Library Website</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Led the redesign and ongoing maintenance of the IHS Library homepage, implementing a complete rebrand and refining search box behavior to improve usability and accessibility.</p>
+                    <a href="https://library.shu.edu/ihs-home" target="_blank" class="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View project</a>
+                </div>
+            </div>
+    
+            <div class="bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg shadow-md hover:shadow-lg transition">
+                <img src="images/hci_project.jpg" alt="Instagram redesign thumbnail" class="w-full h-[590px] object-cover transition-transform duration-300 hover:scale-105">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Project for Human-Computer Interaction Course</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Redesigned the Instagram video experience to introduce missing playback controls like pause, rewind, and fast-forward. Created wireframes and a gesture-based card prototype, then conducted a user survey and cognitive walkthrough to evaluate usability. Feedback highlighted issues with icon ambiguity, leading to refined design suggestions like scrub bar enhancements and gesture discoverability. Proposed an empirical evaluation with a between-subjects study to measure usability improvements.</p>
+                    <a href="https://github.com/haasg1/HCI-OngoingProject" target="_blank" class="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View project</a>
+                </div>
+            </div>
+    
+            <div class="bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg shadow-md hover:shadow-lg transition">
+                <img src="images/hci_project2.jpg" alt="Ed Discussion redesign thumbnail" class="w-full h-[380px] object-cover transition-transform duration-300 hover:scale-105">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Final Project for Human-Computer Interaction Course</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Conducted needfinding and heuristic evaluation of Ed Discussion, the online course forum used in Georgia Tech’s OMSCS program. Identified gaps in feedback for students awaiting TA responses and proposed interface enhancements including read receipts and response timers. Designed wireframes and conducted qualitative user testing. Findings revealed strong user support for read receipts but confusion around timer icons, leading to clear next steps for refinement. The project addressed principles of discoverability, feedback, and cognitive load reduction.</p>
+                    <a href="https://github.com/haasg1/HCI-Project" target="_blank" class="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View project</a>
+                </div>
+            </div>
+    
+            <div class="bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg shadow-md hover:shadow-lg transition">
+                <img src="images/sl.jpg" alt="Supervised learning project thumbnail" class="w-full h-[380px] object-cover transition-transform duration-300 hover:scale-105">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold">Supervised Learning Assignment</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Compared K-Nearest Neighbors (KNN), Artificial Neural Networks (ANN), and Support Vector Machines (SVM) on two distinct datasets: a small binary classification dataset (Seeds) and a large, multi-class dataset (Diamonds). Explored how dataset complexity impacts model performance, scalability, and generalization. Tuned hyperparameters (e.g., neighbors, layers, learning rate, kernel type), plotted learning/validation curves, and analyzed F1 score trends. Found that simpler models like KNN excelled on clean, low-dimensional data, while complex datasets like Diamonds required more careful preprocessing and tuning. Unexpectedly, neural networks performed best on the simpler dataset, highlighting tradeoffs between data complexity and model design.</p>
+                    <a href="https://github.com/haasg1/Supervised-Learning" target="_blank" class="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View project</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-sm text-gray-500 mt-12 pb-6">
+        © 2025 Gabriela Haas. Built with ❤️ and Tailwind CSS.
+      </footer>
+      <script>
+        const toggleBtn = document.getElementById('toggle-dark');
+        const root = document.documentElement;
+      
+        toggleBtn.addEventListener('click', () => {
+          root.classList.toggle('dark');
+        });
+      </script>
+      <script>
+        // Load header
+        fetch("header.html")
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById("header").innerHTML = data;
+    
+            // Now that header is loaded, handle dark mode
+            const toggleBtn = document.getElementById('toggle-dark');
+            const root = document.documentElement;
+    
+            // Set initial theme from localStorage
+            if (localStorage.getItem('theme') === 'dark') {
+                root.classList.add('dark');
+            }
+    
+            // Toggle button logic
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    root.classList.toggle('dark');
+                    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+                });
+            }
+          });
+    </script>
+</body>
+</html>
